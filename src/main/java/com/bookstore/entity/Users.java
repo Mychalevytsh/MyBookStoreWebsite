@@ -1,11 +1,19 @@
 package com.bookstore.entity;
 
+import javax.persistence.*;
+
+
+@Entity
+
 public class Users {
     private Integer userId;
     private String email;
     private String fullName;
     private String password;
 
+    @Column(name = "user_id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getUserId() {
         return userId;
     }
@@ -22,6 +30,7 @@ public class Users {
         this.email = email;
     }
 
+    @Column(name = "full_name")
     public String getFullName() {
         return fullName;
     }
